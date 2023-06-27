@@ -17,7 +17,6 @@ object meter
 {
    parent load_1;
    nominal_voltage 2401.7771;
-   phases ABCN;
 }
 
    object building
@@ -97,15 +96,14 @@ object meter
        temperature_source "forecast.temperature";
    
        measured_demand_timestep 1wk;
-  // };
 }
 
 // Task 3 - Add an industrial load to load 4
 object meter 
 {
-   parent load_4;
+   parent load_1;
    nominal_voltage 2401.7771;
-   phases ABCN;
+}
    object industrial
    {
        parent load_4;
@@ -114,15 +112,14 @@ object meter
        schedule "1-12,0-4,12-23,1,0.5,0.5,0.5,0.5,0.5,0.5,0.99";
        schedule "1-12,0-4,0-11,1.0,0.95";
        schedule "1-12,5-6,0-11,0.1";
-   };
-}
+   }
 
 // Task 4 - Add an agricultural load to load 5
 object meter 
 {
-   parent load_5;
+   parent load_1;
    nominal_voltage 2401.7771;
-   phases ABCN;
+}
    object agricultural
    {
        parent load_5;
@@ -133,16 +130,15 @@ object meter
        sensitivity_source "forecast.wind_speed";
        sensitivity_base 0;
        sensitivity_value -1e5;
-   };
-}
+   }
 
 
 // Task 5 - Add a public service load to load 6
 object meter 
 {
-   parent load_6;
+   parent load_1;
    nominal_voltage 2401.7771;
-   phases ABCN;
+}
    object public_service
    {
        parent load_6;
@@ -150,8 +146,7 @@ object meter
        Pi 1 pu;
        schedule "1-12,0-6,0-11,0.5,0.95";
        schedule "1-12,0-6,12-23,1.0,0.99";
-   };
-}
+   }
 
 // Task 6 - Use weather forecast
 #python -m noaa_forecast -p=37.5,-122.4 -c=forecast.csv -n=forecast -g=forecast.glm
