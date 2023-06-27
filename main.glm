@@ -18,6 +18,7 @@ object meter
    parent load_1;
    nominal_voltage 2401.7771;
    phases ABCN;
+}
 
    object building
    {
@@ -39,15 +40,9 @@ object meter
        BS 10 kWh;
        PG 10 kW;
        IC UNITY;
-   };
-}
+   }
 
 // Task 2 - Add 4 residential buildings to load 2
-//object meter 
-//{
-   //parent load_2;
-   //nominal_voltage 2401.7771;
-   //phases ABCN;
 
    object building:..4
    {
