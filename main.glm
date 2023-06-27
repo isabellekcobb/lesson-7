@@ -12,9 +12,10 @@ schedule setpoint
     * * * 10-4 6-0 18.0;
     * * * 5-9 6-0 24.0; 
 }
-object building
+
+object meter 
 {
-   object meter
+   object building
    {
        parent load_1;
        building_type RETAIL;
