@@ -14,24 +14,27 @@ schedule setpoint
 }
 object building
 {
-    parent load_1;
-    building_type RETAIL;
-
-    // inputs
-    NH 4;
-    floor_area 150 m^2;
-    TS setpoint;
-
-    temperature_source "forecast.temperature";
-    electric_heat TRUE;
-    electrification_fraction 0.5;
-    electrification_efficiency 2.0;
-    occupancy 4;
-    PV 200 sf;
-    PX 10 kW;
-    BS 10 kWh;
-    PG 10 kW;
-    IC UNITY;
+   object meter
+   {
+       parent load_1;
+       building_type RETAIL;
+   
+       // inputs
+       NH 4;
+       floor_area 150 m^2;
+       TS setpoint;
+   
+       temperature_source "forecast.temperature";
+       electric_heat TRUE;
+       electrification_fraction 0.5;
+       electrification_efficiency 2.0;
+       occupancy 4;
+       PV 200 sf;
+       PX 10 kW;
+       BS 10 kWh;
+       PG 10 kW;
+       IC UNITY;
+   };
 }
 
 // Task 2 - Add 4 residential buildings to load 2
