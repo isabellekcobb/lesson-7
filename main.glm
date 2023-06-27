@@ -43,78 +43,97 @@ object meter
 }
 
 // Task 2 - Add 4 residential buildings to load 2
-object building:..4
+object meter 
 {
-    parent load_2;
-    floor_area 1500 sf;
-    dt 1h;
+   parent load_2;
+   nominal_voltage 2401.7771;
+   phases ABCN;
 
-    // thermal parameters
-    UA random.triangle(200,400) W/K;
-    CA random.triangle(1.5e6,2.5e6) J/K;
-    UI random.triangle(5000,7000) W/K;
-    CM random.triangle(7e6,9.e6) J/K;
-    UM random.triangle(500,700) W/K;
-
-    // design parameters
-    TH random.triangle(-20,-10) degC;
-    TC random.triangle(35,45) degC;
-    //QH 50000.0 W; // 0 to autosize
-    QE random.triangle(3,9) W/m^2;
-    QG random.triangle(0,2) W/m^2;
-    QO random.triangle(800,1600) W/unit;
-    QV random.triangle(200,600) W/unit;
-    SA random.triangle(10,20) m^2;
-
-    // control parameters
-    K 1.0;
-
-    // inputs
-    EU random.triangle(0.1,0.2) unit;
-    NG random.triangle(0.1,0.2) unit;
-    NH random.triangle(0,4) unit;
-    TS random.triangle(18,22) degC;
-
-    // outputs
-    PZM 0 pu; // constant impedance HVAC real power (pu.W)
-    PPM 0.3 pu; // constant power HVAC real power (pu.W)
-    QPM 0.03 pu; // constant power HVAC reactive power (pu.VAr)
-    PZE 0.5 pu; // constant impedance end-use real power (W)
-    PIE 0 pu; // constant current end-use real power (W)
-    PPE 0.5 pu; // constant power end-use real power (W)
-    QZE 0.05 pu; // constant impedance end-use reactive power (VAr)
-    QIE 0 pu; // constant current end-use reactive power (VAr)
-    QPE 0.5 pu; // constant power end-use reactive power (VAr)
-    PPH 0.06 pu; // constant power ventilation real power (pu.W/person)
-    QPH 0.01 pu; // constant power ventilation reactive power (pu.VAr/person)
-
-    temperature_source "forecast.temperature";
-
-    measured_demand_timestep 1wk;
+   object building:..4
+   {
+       parent load_2;
+       floor_area 1500 sf;
+       dt 1h;
+   
+       // thermal parameters
+       UA random.triangle(200,400) W/K;
+       CA random.triangle(1.5e6,2.5e6) J/K;
+       UI random.triangle(5000,7000) W/K;
+       CM random.triangle(7e6,9.e6) J/K;
+       UM random.triangle(500,700) W/K;
+   
+       // design parameters
+       TH random.triangle(-20,-10) degC;
+       TC random.triangle(35,45) degC;
+       //QH 50000.0 W; // 0 to autosize
+       QE random.triangle(3,9) W/m^2;
+       QG random.triangle(0,2) W/m^2;
+       QO random.triangle(800,1600) W/unit;
+       QV random.triangle(200,600) W/unit;
+       SA random.triangle(10,20) m^2;
+   
+       // control parameters
+       K 1.0;
+   
+       // inputs
+       EU random.triangle(0.1,0.2) unit;
+       NG random.triangle(0.1,0.2) unit;
+       NH random.triangle(0,4) unit;
+       TS random.triangle(18,22) degC;
+   
+       // outputs
+       PZM 0 pu; // constant impedance HVAC real power (pu.W)
+       PPM 0.3 pu; // constant power HVAC real power (pu.W)
+       QPM 0.03 pu; // constant power HVAC reactive power (pu.VAr)
+       PZE 0.5 pu; // constant impedance end-use real power (W)
+       PIE 0 pu; // constant current end-use real power (W)
+       PPE 0.5 pu; // constant power end-use real power (W)
+       QZE 0.05 pu; // constant impedance end-use reactive power (VAr)
+       QIE 0 pu; // constant current end-use reactive power (VAr)
+       QPE 0.5 pu; // constant power end-use reactive power (VAr)
+       PPH 0.06 pu; // constant power ventilation real power (pu.W/person)
+       QPH 0.01 pu; // constant power ventilation reactive power (pu.VAr/person)
+   
+       temperature_source "forecast.temperature";
+   
+       measured_demand_timestep 1wk;
+   };
 }
 
 // Task 3 - Add an industrial load to load 4
-object industrial
+object meter 
 {
-    parent load_4;
-    industry_code "MECS_313";
-    P0 1 MW;
-    schedule "1-12,0-4,12-23,1,0.5,0.5,0.5,0.5,0.5,0.5,0.99";
-    schedule "1-12,0-4,0-11,1.0,0.95";
-    schedule "1-12,5-6,0-11,0.1";
+   parent load_4;
+   nominal_voltage 2401.7771;
+   phases ABCN;
+   object industrial
+   {
+       parent load_4;
+       industry_code "MECS_313";
+       P0 1 MW;
+       schedule "1-12,0-4,12-23,1,0.5,0.5,0.5,0.5,0.5,0.5,0.99";
+       schedule "1-12,0-4,0-11,1.0,0.95";
+       schedule "1-12,5-6,0-11,0.1";
+   };
 }
 
 // Task 4 - Add an agricultural load to load 5
-object agricultural
+object meter 
 {
-    parent load_5;
-    P0 1 MW;
-    Mc 1 pu;
-    schedule "1-12,0-6,0-11,0.5,0.95";
-    schedule "6-10,0-6,12-23,1.0,0.99";
-    sensitivity_source "forecast.wind_speed";
-    sensitivity_base 0;
-    sensitivity_value -1e5;
+   parent load_1;
+   nominal_voltage 2401.7771;
+   phases ABCN;
+   object agricultural
+   {
+       parent load_5;
+       P0 1 MW;
+       Mc 1 pu;
+       schedule "1-12,0-6,0-11,0.5,0.95";
+       schedule "6-10,0-6,12-23,1.0,0.99";
+       sensitivity_source "forecast.wind_speed";
+       sensitivity_base 0;
+       sensitivity_value -1e5;
+   };
 }
 
 
