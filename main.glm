@@ -120,7 +120,7 @@ object meter
 // Task 4 - Add an agricultural load to load 5
 object meter 
 {
-   parent load_1;
+   parent load_5;
    nominal_voltage 2401.7771;
    phases ABCN;
    object agricultural
@@ -138,13 +138,19 @@ object meter
 
 
 // Task 5 - Add a public service load to load 6
-object public_service
+object meter 
 {
-    parent load_6;
-    P0 100 kW;
-    Pi 1 pu;
-    schedule "1-12,0-6,0-11,0.5,0.95";
-    schedule "1-12,0-6,12-23,1.0,0.99";
+   parent load_6;
+   nominal_voltage 2401.7771;
+   phases ABCN;
+   object public_service
+   {
+       parent load_6;
+       P0 100 kW;
+       Pi 1 pu;
+       schedule "1-12,0-6,0-11,0.5,0.95";
+       schedule "1-12,0-6,12-23,1.0,0.99";
+   };
 }
 
 // Task 6 - Use weather forecast
