@@ -43,11 +43,11 @@ object meter
 }
 
 // Task 2 - Add 4 residential buildings to load 2
-object meter 
-{
-   parent load_2;
-   nominal_voltage 2401.7771;
-   phases ABCN;
+//object meter 
+//{
+   //parent load_2;
+   //nominal_voltage 2401.7771;
+   //phases ABCN;
 
    object building:..4
    {
@@ -97,7 +97,7 @@ object meter
        temperature_source "forecast.temperature";
    
        measured_demand_timestep 1wk;
-   };
+  // };
 }
 
 // Task 3 - Add an industrial load to load 4
