@@ -47,7 +47,6 @@ object meter
 {
    parent load_2;
    nominal_voltage 2401.7771;
-   phases ABCN;
 }
 
    object building:..4
