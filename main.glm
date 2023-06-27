@@ -18,7 +18,7 @@ object building
    {
        parent load_1;
        building_type RETAIL;
-   
+
        // inputs
        NH 4;
        floor_area 150 m^2;
