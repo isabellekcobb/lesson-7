@@ -53,7 +53,7 @@ Agricultural loads can be sensitive to different weather variables from building
 
 ## Public Services
 
-Public service loads are for street lights and other public services.  They are typically sensitive to daylight and rainfall. See [`public_service` object documentation] for details.
+Public service loads are for street lights and other public services.  They are typically sensitive to daylight and rainfall. See [`public_service` object documentation](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Powerflow&doc=/Module/Powerflow/Public_service.md) for details.
 
 ## Tasks
 
