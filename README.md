@@ -53,16 +53,16 @@ Agricultural loads can be sensitive to different weather variables from building
 
 ## Public Services
 
-Public service loads are for street lights and other public services.  They are typically sensitive to daylight and rainfall. See [`public_service` object documentation] for details.
+Public service loads are for street lights and other public services.  They are typically sensitive to daylight and rainfall. See [`public_service` object documentation](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Powerflow&doc=/Module/Powerflow/Public_service.md) for details.
 
 ## Tasks
 
-1. Add a commercial building to load 1
-2. Add 4 residential buildings to load 2
-3. Add an industrial load to load 4
-4. Add an agricultural load to load 5
-5. Add a public service load to load 6
-6. Use the weather forecast for Denver Colorado
+1. Add a commercial schedule and building to load 1 (see [`main.glm@6`](main.glm#L6-L35)).
+2. Add 4 residential buildings to load 2 (see [`main.glm@37`](main.glm#L37-L86)).
+3. Add an industrial load to load 4 (see [`main.glm@88`](main.glm#L88-L97)).
+4. Add an agricultural load to load 5 (see [`main.glm@99`](main.glm#L99-L110)).
+5. Add a public service load to load 6 (see [`main.glm@112`](main.glm#L112-L120)).
+6. Use the weather forecast for Denver Colorado (see [`main.glm@122`](main.glm#L122-L130)).
 
 # Exercices
 
@@ -74,3 +74,7 @@ Public service loads are for street lights and other public services.  They are 
 * [Industrial loads](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Powerflow&doc=/Module/Powerflow/Industrial.md)
 * [Agricultural loads](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Powerflow&doc=/Module/Powerflow/Agricultural.md)
 * [Public service loads](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Powerflow&doc=/Module/Powerflow/Public_service.md)
+
+# Next Lesson
+
+* [Lesson 8 - Exporting Data](../../../lesson-8)

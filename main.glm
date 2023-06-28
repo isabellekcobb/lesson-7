@@ -132,7 +132,6 @@ object meter
        sensitivity_value -1e5;
    }
 
-
 // Task 5 - Add a public service load to load 6
 object meter 
 {
@@ -149,7 +148,7 @@ object meter
    }
 
 // Task 6 - Use weather forecast
-#python -m noaa_forecast -p=37.5,-122.4 -c=forecast.csv -n=forecast -g=forecast.glm
+#python -m noaa_forecast -p=39.86,-104.68 -c=forecast.csv -n=forecast -g=forecast.glm
 #include "forecast.glm"
 clock
 {
