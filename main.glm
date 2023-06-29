@@ -13,11 +13,6 @@ schedule setpoint
     * * * 5-9 6-0 24.0; 
 }
 
-object meter 
-{
-   parent load_1;
-   nominal_voltage 2401.7771;
-}
 
    object building
    {
@@ -42,11 +37,6 @@ object meter
    }
 
 // Task 2 - Add 4 residential buildings to load 2
-object meter 
-{
-   parent load_2;
-   nominal_voltage 2401.7771;
-}
 
    object building:..4
    {
@@ -99,11 +89,7 @@ object meter
 }
 
 // Task 3 - Add an industrial load to load 4
-object meter 
-{
-   parent load_1;
-   nominal_voltage 2401.7771;
-}
+
    object industrial
    {
        parent load_4;
@@ -115,11 +101,7 @@ object meter
    }
 
 // Task 4 - Add an agricultural load to load 5
-object meter 
-{
-   parent load_1;
-   nominal_voltage 2401.7771;
-}
+
    object agricultural
    {
        parent load_5;
@@ -133,11 +115,7 @@ object meter
    }
 
 // Task 5 - Add a public service load to load 6
-object meter 
-{
-   parent load_1;
-   nominal_voltage 2401.7771;
-}
+
    object public_service
    {
        parent load_6;
