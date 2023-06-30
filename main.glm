@@ -3,6 +3,8 @@
 #endif
 #include "123.glm"
 
+#python -i create_meters.json -o create_meters.glm
+
 // Task 1 - Add a commercial building to load 1
 schedule setpoint
 {
